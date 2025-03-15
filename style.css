@@ -118,22 +118,36 @@ span{
     font-size: 1.6rem;
 }
 
-.home-img{
-    border-radius: 50%;
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: black;
 }
 
-.home-img img{
-    position: relative;
-    width: 32vh;
+.home-img {
+    display: flex;
+    justify-content: center;
+}
+
+.home-img img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    object-fit: cover;
     box-shadow: 0 0 25px solid #211eb6;
     cursor: pointer;
     transition: 0.2s linear;
 }
 
-.home-img img:hover{
-    font-size: 1.8rem;
-    font-weight: 500;
+@media (max-width: 600px) {
+    .home-img img {
+        width: 80%;
+        height: auto;
+        max-width: 120px;
+    }
 }
 
 .social-icons a{

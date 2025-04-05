@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Brent Gabriel Vicente</title>
-      <style>
+    <style>
         .typing-text {
             font-size: 34px;
             font-weight: 600;
@@ -23,36 +23,64 @@
             margin-left: 5px;
             animation: blink 0.7s infinite;
         }
-      </style>
+    </style>
 </head>
-  <body>
+<body>
     <header>
         <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="#">About</a>
-            <a href="#">Skills</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
+            <a href="#home" class="active" onclick="showSection('home')">Home</a>
+            <a href="#about" onclick="showSection('about')">About</a>
+            <a href="#skills" onclick="showSection('skills')">Skills</a>
+            <a href="#experience" onclick="showSection('experience')">Experience</a>
+            <a href="#contact" onclick="showSection('contact')">Contact</a>
         </nav>
-    </header>
-    <section class="home">
+    </header>    
+
+    <section id="home">
         <div class="home-img">
-            <img src="img.jpg" alt="">
+            <img src="img.jpg" alt="Home Image">
         </div>
         <div class="home-content">
             <h1>Sup, I'm <span>Brent</span></h1>
             <h3 class="typing-text">I'm <span id="typed-text"></span><span class="cursor"></span></h3>
         </div>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/brent-gabriel-vicente"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </section>
+
+    <section id="about" style="display:none;">
+        <h2 style="font-weight: bold; font-size: 32px;">About</h2>
+        <p style="font-size: 18px;">Hello! I'm Brent Gabriel C. Vicente I'm a student currently pursuing a degree in Information Technology (BSIT)</p>
+        <p style="font-size: 18px;">I find joy in learning about the inner workings of computers and how hardware components interact.</p>
+        <p style="font-size: 18px;"> While I’m still working on strengthening my skills in software, I’m interested and eager to continue learning and improving in that area.</p>
+    </section>
+    
+    <section id="skills" style="display:none;">
+        <h2 style="font-weight: bold; font-size: 32px;">Skills</h2>
+        <p style="font-size: 18px;">Technician</p>
+        <p style="font-size: 18px;">HTML, CSS, JavaScript</p>
+    </section>
+    
+    <section id="experience" style="display:none;">
+        <h2 style="font-weight: bold; font-size: 32px;">Experience</h2>
+        <p style="font-size: 18px;">Experience: </p>
+        <p style="font-size: 18px;">Certifications: </p>
+    </section>
+    
+    <section id="contact" style="display:none;">
+        <h2 style="font-weight: bold; font-size: 32px;">Contact</h2>
+        <p style="font-size: 18px;">Github: https://github.com/brent-gabriel-vicente</p>
+        <p style="font-size: 18px;">linkedin: </p>
+    </section>     
+
     <script>
         const words = ["a Student", "an IT", "a Developer"];
         let wordIndex = 0;
         let letterIndex = 0;
         let isDeleting = false;
+
         function typeEffect() {
             const typedText = document.getElementById("typed-text");
 
@@ -82,7 +110,24 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             typeEffect();
+            showSection('home');
         });
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
     </script>
-  </body>
+</body>
 </html>

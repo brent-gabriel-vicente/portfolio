@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brent Gabriel Vicente</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Brent Gabriel Vicente</title>
     <style>
         .typing-text {
             font-size: 34px;
@@ -27,14 +27,14 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="nav-menu">
             <a href="#home" class="active" onclick="showSection('home')">Home</a>
             <a href="#about" onclick="showSection('about')">About</a>
             <a href="#skills" onclick="showSection('skills')">Skills</a>
             <a href="#experience" onclick="showSection('experience')">Experience</a>
             <a href="#contact" onclick="showSection('contact')">Contact</a>
         </nav>
-    </header>    
+    </header>
 
     <section id="home">
         <div class="home-img">
@@ -73,61 +73,8 @@
         <h2 style="font-weight: bold; font-size: 32px;">Contact</h2>
         <p style="font-size: 18px;">Github: https://github.com/brent-gabriel-vicente</p>
         <p style="font-size: 18px;">linkedin: </p>
-    </section>     
+    </section>
 
-    <script>
-        const words = ["a Student", "an IT", "a Developer"];
-        let wordIndex = 0;
-        let letterIndex = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            const typedText = document.getElementById("typed-text");
-
-            if (wordIndex >= words.length) {
-                wordIndex = 0;
-            }
-
-            let currentWord = words[wordIndex];
-
-            if (!isDeleting) {
-                typedText.textContent = currentWord.substring(0, letterIndex++);
-            } else {
-                typedText.textContent = currentWord.substring(0, letterIndex--);
-            }
-
-            if (!isDeleting && letterIndex === currentWord.length + 1) {
-                isDeleting = true;
-                setTimeout(typeEffect, 1500);
-            } else if (isDeleting && letterIndex === 0) {
-                isDeleting = false;
-                wordIndex++;
-                setTimeout(typeEffect, 500);
-            } else {
-                setTimeout(typeEffect, isDeleting ? 100 : 200);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            typeEffect();
-            showSection('home');
-        });
-
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.style.display = 'none');
-
-            const selectedSection = document.getElementById(sectionId);
-            selectedSection.style.display = 'block';
-
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => link.classList.remove('active'));
-
-            const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -60,6 +60,14 @@ section {
     text-align: center;
 }
 
+.aboutMeText {
+    font-size: 16px;
+}
+
+.contactMe {
+    font-size: 18px;
+}
+
 .home-content {
     text-align: center;
 }
@@ -97,6 +105,7 @@ span {
 }
 
 @media (max-width: 600px) {
+
     .home-img img {
         width: 80%;
         height: auto;

@@ -60,7 +60,10 @@ section {
     text-align: center;
 }
 
-.aboutMeText {
+#about {
+    display: flex;
+    min-height: 40vh;
+    height: auto;
     font-size: 16px;
 }
 
@@ -105,6 +108,14 @@ span {
 }
 
 @media (max-width: 600px) {
+
+    #about {
+        height: auto;
+        min-height: 60vh;
+        overflow: hidden;
+        font-size: 1.5rem;
+        margin-top: 150px;
+    }
 
     .home-img img {
         width: 80%;

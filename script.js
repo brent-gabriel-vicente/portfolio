@@ -45,5 +45,22 @@ const words = ["a Student", "an IT", "a Developer"];
     document.addEventListener("DOMContentLoaded", () => {
       typeEffect();
       showSection('home');
+
+      VANTA.NET({
+        el: "#vanta-bg",
+        backgroundAlpha: 1,
+        backgroundColor: 0x0,
+        color: 0xff,
+        maxDistance: 19,
+        points: 10,
+        spacing: 15,
+        showDots: true,
+        mouseControls: true,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200,
+        minWidth: 200,
+        scale: 1,
+        scaleMobile: 1
+      });
     });
-    

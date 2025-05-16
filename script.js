@@ -5,6 +5,7 @@ const words = ["a Student", "an IT", "a Developer"];
 
     function typeEffect() {
       const typedText = document.getElementById("typed-text");
+      if (!typedText) return;
 
       if (wordIndex >= words.length) wordIndex = 0;
 
@@ -28,25 +29,22 @@ const words = ["a Student", "an IT", "a Developer"];
       }
 }
 
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => section.style.display = 'none');
-
-    const selectedSection = document.getElementById(sectionId);
-    selectedSection.style.display = 'block';
-
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => link.classList.remove('active'));
-
-    const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-    if (activeLink) activeLink.classList.add('active');
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-      typeEffect();
-      showSection('home');
+  typeEffect();
 
-  VANTA.NET({
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+  }
+
+  const vantaElement = document.getElementById("vanta-bg");
+  if (vantaElement && typeof VANTA !== "undefined" && VANTA.NET) {
+    VANTA.NET({
       el: "#vanta-bg",
       backgroundAlpha: 1,
       backgroundColor: 0x0,
@@ -61,6 +59,38 @@ document.addEventListener("DOMContentLoaded", () => {
       minHeight: 200,
       minWidth: 200,
       scale: 1,
-      scaleMobile: 1
+      scaleMobile: 1,
     });
+  }
 });
+
+function showSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.style.display = 'flex';
+}
+
+function hideSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.style.display = 'none';
+}
+
+const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const certImage = document.getElementById("cert-image");
+    const closeBtn = document.getElementById("modal-close");
+
+    certImage.onclick = function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+    };
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };

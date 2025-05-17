@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       mouseControls: true,
       touchControls: false,
       gyroControls: false,
-      minHeight: 200,
-      minWidth: 200,
+      minHeight: document.documentElement.scrollHeight,
+      minWidth: 0,
       scale: 1,
       scaleMobile: 1,
     });

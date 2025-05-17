@@ -66,86 +66,11 @@ nav a.active{
     border-bottom: 3px solid #211eb6;
 }
 
-/* Sidebar (not finished yet)
-.sidebar {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 200px;
-  background: #1a1a1a;
-  padding: 20px;
-  z-index: 1000;
-}
-
-.sidebar li {
-  width: 100%;
-  margin: 15px 0;
-}
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
-
-.main-menu {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.main-menu li {
-  margin: 0 15px;
-}
-
-.main-menu a {
-  color: white;
-  text-decoration: none;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 1.5rem;
-  color: white;
-  cursor: pointer;
-}
-
-.main-menu {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .main-menu li:not(.menu-icon) {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-  }
-}
-*/
-
 section {
     text-align: center;
 }
 
-#about, #contact, #experience, #techstack {
+#about, #contact, #techstack {
     display: flex;
     min-height: 40vh;
     height: auto;
@@ -155,22 +80,21 @@ section {
 @media (max-width: 600px) {
 
     #about {
-        height: auto;
-        min-height: 60vh;
-        overflow: hidden;
-        font-size: 1.5rem;
-        margin-top: 150px;
+    height: auto;
+    min-height: 50vh;
+    overflow: hidden;
+    font-size: 1.3rem;
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     }
+
 
     #techstack {
-        height: auto;
-        min-height: 60vh;
-        overflow: hidden;
-        font-size: 1.5rem;
-        margin-top: 150px;
-    }
-
-     #experience {
         height: auto;
         min-height: 60vh;
         overflow: hidden;
@@ -197,9 +121,10 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 100px 1rem 2rem;
   color: white;
   text-align: center;
+  margin-top: auto;
 }
 
 .techstack-wrapper {
@@ -258,20 +183,40 @@ section {
   color: white;
 }
 
-/* Certificate */
-#experience {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  color: white;
+.image-container.github-logo {
   text-align: center;
+  width: 100px;
+  margin: 0 auto;
 }
 
-#experience h1 {
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  font-weight: bold;
+.logo-bg {
+  background-color: white;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -13px auto 0.8rem;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-bg:hover {
+  transform: scale(1.1);
+}
+
+.logo-bg img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Certificate */
+#Certificate {
+  margin-top: 30px;
 }
 
 .certificate-wrapper h2 {
@@ -365,11 +310,11 @@ section {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     background-color: transparent;
     border: 0.2rem solid #211eb6;
-    font-size: 2rem;
+    font-size: 3rem;
     border-radius: 50%;
     margin: 0 1.5rem;
     transition: 0.3s ease;
@@ -438,15 +383,17 @@ nav {
 
 @media (max-width: 600px) {
     nav {
-        padding: 1rem 5%;
-        overflow-x: auto;
-        justify-content: flex-start;
-    }
+    padding: 1rem 2%;
+    justify-content: center;
+    overflow-x: hidden;
+    gap: 0.7rem;
+  }
 
-    nav a {
-        font-size: 1.4rem;
-        margin: 0 0.8rem;
-    }
+  nav a {
+    font-size: 1.2rem;
+    margin: 0 0.3rem;
+    white-space: nowrap;
+  }
 }
 
 header {

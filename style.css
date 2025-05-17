@@ -79,37 +79,42 @@ section {
 
 @media (max-width: 600px) {
 
-    #about {
-    height: auto;
-    min-height: 50vh;
+  #about {
+    height: 100vh;
     overflow: hidden;
     font-size: 1.3rem;
-    margin-top: 100px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    }
+    padding: 0 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
+@media (max-width: 600px) {
+  #about {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+}
 
-    #techstack {
-        height: auto;
-        min-height: 60vh;
-        overflow: hidden;
-        font-size: 1.5rem;
-        margin-top: 150px;
-    }
+  #techstack {
+    height: auto;
+    min-height: 60vh;
+    overflow: hidden;
+    font-size: 1.5rem;
+    margin-top: 150px;
+  }
 
-    #contact {
-        height: auto;
-        min-height: 60vh;
-        overflow: hidden;
-        font-size: 1.5rem;
-        margin-top: 150px;
-    }
-
+  #contact {
+    height: auto;
+    min-height: 60vh;
+    overflow: hidden;
+    font-size: 1.5rem;
+    margin-top: 150px;
+  }
 }
 
 #home {
